@@ -16,7 +16,7 @@ def SpeSub_1(noisy_wav_file):
     # print(fs)
     # Estimate the energy of the noisy signal
     # Because the noisy signal is unknown, suppose the first 30 frames of the noisy signal is the noise
-    Mag_noise = np.mean(np.abs(S_noisy[:, :15]), axis=1, keepdims=True)  # D * 1
+    Mag_noise = np.mean(np.abs(S_noisy[:, :30]), axis=1, keepdims=True)  # D * 1
     Power_noise = Mag_noise ** 2
     Power_noise = np.tile(Power_noise, [1, T])
     # Power minus
